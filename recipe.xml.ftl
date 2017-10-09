@@ -2,6 +2,9 @@
 <recipe>
     <#include "../common/recipe_manifest.xml.ftl" />
 
+    <#include "root/src/app_package/simple_activity_layout.xml.ftl" />
+    <open file="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
+
     <instantiate from="root/src/app_package/SimpleActivity.kt.ftl"
                    to="${escapeXmlAttribute(srcOut)}/ui/activity/${activityClass}.kt" />
 
