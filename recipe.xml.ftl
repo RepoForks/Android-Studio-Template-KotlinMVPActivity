@@ -10,4 +10,7 @@
 
     <instantiate from="root/src/app_package/SimplePresenter.kt.ftl"
                    to="${escapeXmlAttribute(srcOut)}/ui/presenter/${presenterClass}.kt" />
+
+    <instantiate from="root/src/app_package/SimplePresenterTest.kt.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/ui/presenter/${presenterClass}Test.kt" />
 </recipe>
