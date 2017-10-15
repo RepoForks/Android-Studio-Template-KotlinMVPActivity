@@ -66,6 +66,21 @@
             suggest="${packageName}"
             default="com.mycompany.myapp" />
 
+    <parameter
+            id="includeTest"
+            name="Include Test for Presenter class"
+            type="boolean"
+            default="false"
+            help="A Test class will be created for Presenter" />
+
+    <parameter
+            id="testFolder"
+            name="Test folder"
+            type="string"
+            constraints="nonempty"
+            suggest="app/src/test/kotlin"
+            visibility="includeTest"
+            default="app/src/test/kotlin" />
 
         <globals file="globals.xml.ftl" />
         <execute file="recipe.xml.ftl" />

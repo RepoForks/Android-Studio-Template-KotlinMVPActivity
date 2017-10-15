@@ -11,6 +11,8 @@
     <instantiate from="root/src/app_package/SimplePresenter.kt.ftl"
                    to="${escapeXmlAttribute(srcOut)}/ui/presenter/${presenterClass}.kt" />
 
-    <instantiate from="root/src/app_package/SimplePresenterTest.kt.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/ui/presenter/${presenterClass}Test.kt" />
+    <#if includeTest>
+        <instantiate from="root/src/app_package/SimplePresenterTest.kt.ftl"
+                   to="${testFolder}/${slashedPackageName(packageName)}/ui/presenter/${presenterClass}Test.kt" />
+    </#if>
 </recipe>
