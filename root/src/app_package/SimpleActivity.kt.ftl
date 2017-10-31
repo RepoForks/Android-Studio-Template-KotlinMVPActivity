@@ -1,4 +1,4 @@
-package ${packageName}
+package ${packageName}.ui.activity
 
 import android.os.Bundle
 import ${packageName}.ui.activity.BaseActivity
@@ -13,25 +13,14 @@ class ${activityClass} : BaseActivity(), ${presenterClass}.MVPView, ${presenterC
 
     var presenter: ${presenterClass}? = null
 
-    <#if hasDagger>
-        @Inject lateinit 
-    </#if>
-    <#if userRepository>
-        var userRepository: UserRepository
-    </#if>
+    <#if hasDagger>@Inject lateinit </#if><#if userRepository>var userRepository: UserRepository</#if>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        <#if hasDagger>
-            getComponent().inject(this)
-        </#if>
+        <#if hasDagger>getComponent().inject(this)</#if>
 
-        presenter = ${presenterClass}(this
-        <#if userRepository>
-            , userRepository
-        </#if>
-        )
+        presenter = ${presenterClass}(this<#if userRepository>, userRepository</#if>)
         presenter?.view = this
         presenter?.navigator = this
 
