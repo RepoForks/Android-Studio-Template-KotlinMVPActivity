@@ -2,6 +2,10 @@
 
 Android Studio templates for boilerplate code generation
 
+# Deprecated
+
+In favor of [this other repo](https://github.com/voghDev/Android-Studio-Templates), which contains this template along with others
+
 # Installing
 
 Clone this repo inside your Android Studio templates folder
